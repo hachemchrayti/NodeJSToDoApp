@@ -1,6 +1,21 @@
 var body_parser= require('body-parser')
-
+var mongoose= require('mongoose')
 var  urlencodedParser=body_parser.urlencoded({extended:false})
+mongoose.connect( "mmongodb+srv://HACHEM:Hachemfst.1@clusterhachem.4ao8v.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true })
+
+var todoSchema= new mongoose.Schema({item:String});
+
+var Todo=mongoose.model('Todo',todoSchema);
+var itemOne=Todo({item:'Hachem'}).save(function(err){
+    if(err){
+        throw err;
+    }else{
+        console.log("Ok : row saved");
+    }
+
+})
+
+
 var data=[
 {
     item:'get milk'
