@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/style.css"  rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/assets/todo-list.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -18,13 +19,12 @@
 
         </form>
         <ul>
-            <li>Item1</li>
-            <li>Item2</li>
-            <li>Item3</li>
-
+            <% for(var i=0;i < todos.length;i++){ %>
+                <li> <%= todos[i].item %> </li>
+            <% } %>
         </ul>
         
-    </div>
+    </div>  
 
     
 </body>
